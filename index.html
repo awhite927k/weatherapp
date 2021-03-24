@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
+            <div class = "card">
+                <!-- left panel div -->
+                <h2 class= "card-header">Search for a City:</h2>
+                <form id="user-form" class="card-body">
+                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input"/>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+                <div id="city-buttons" class="card-body">
+                    <!-- These data-attribute values will be used to search for repositories when a button is clicked. -->
+                    <button data-language="austin" class="btn">Austin</button>
+                    <button data-language="chigago" class="btn">Chicago</button>
+                    <button data-language="newyork" class="btn">New York</button>
+                    <button data-language="orlando" class="btn">Orlando</button>
+                    <button data-language="sanfran" class="btn">San Francisco</button>
+                    <button data-language="seattle" class="btn">Seattle</button>
+                    <button data-language="denver" class="btn">Denver</button>
+                    <button data-language="atlanta" class="btn">Atlanta</button>
+                  </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-8">
+            <div>
+                <h2 class= "city-header"></h2>
+                <!-- right panel div top -->
+            </div>
+            <div>
+                <h2 class= "card-header">5-Day Forecast:</h2>
+                <!-- right panel div bottom -->
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</body>
+</html>
