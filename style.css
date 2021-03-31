@@ -3,6 +3,9 @@
     background-color:lightgray;
   }
 
+  @import 'foundation';
+
+
   body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -14,6 +17,34 @@
     margin: 20px auto;
     width: 94%;
   }
+
+  .form-style {
+    position: fixed;
+    color: #383333;
+    border: 1px solid black;
+    margin: auto;
+    width: auto;
+    height:auto;
+    background-color: #b3b3b3;
+    border-radius: 10px;
+    top: 25vmin;
+    /* left: 25vmax; */
+    box-shadow: 0px 0px 8px #8a8af5;
+}
+
+.form-style fieldset {
+    padding: 30px;
+}
+
+.form-style legend {
+  padding-top: 30px;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.form-input {
+  background-color: aliceblue;
+}
 
  h1 {
      text-align: center;

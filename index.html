@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Weather Dashboard</title>
 </head>
 
@@ -13,39 +17,56 @@
     </header>
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-4">
-            <div class = "card">
-                <!-- left panel div -->
-                <h2 class= "card-header">Search for a City:</h2>
-                <form id="user-form" class="card-body">
-                    <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input"/>
-                    <button type="submit" class="btn">Search</button>
-                </form>
-                <div id="city-buttons" class="card-body">
-                    <!-- These data-attribute values will be used to search for repositories when a button is clicked. -->
-                    <button data-language="austin" class="btn">Austin</button>
-                    <button data-language="chigago" class="btn">Chicago</button>
-                    <button data-language="newyork" class="btn">New York</button>
-                    <button data-language="orlando" class="btn">Orlando</button>
-                    <button data-language="sanfran" class="btn">San Francisco</button>
-                    <button data-language="seattle" class="btn">Seattle</button>
-                    <button data-language="denver" class="btn">Denver</button>
-                    <button data-language="atlanta" class="btn">Atlanta</button>
-                  </div>
-            </div>
+            <div class="form">
+              <div id="modal-form" class="" data-reveal aria-labelledby="userForm" aria-hidden="true" role="dialog">
+                <form class="form-style">
+                    <fieldset>
+                      <legend id="userForm">Search for a city:</legend>
+                    <p id="field1">
+                        <label for="cityName">
+                        City Name: <input type="text" id="cityName" class="form-input">
+                        </label>
+                    </p>    
+                    <p>
+                        <label for="citySelect">
+                        Select a city: 
+                        </label>
+                        <select id="citySelect" class="form-input">
+                            <option value="Austin">Austin</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="New York">New York</option>
+                            <option value="Orlando">Orlando</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="Seattle">Seattle</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Atlanta">Atlanta</option>
+                        </select>
+                      </p>
+                      <p>
+                          <button id="form-submit" type="submit" class="button radius">Check the Weather</button>
+                      </p>
+        
+                    </fieldset>
+                  </form>
+              </div>
+        </div>
         </div>
         <div class="col-12 col-md-8">
             <div>
-                <h2 class= "city-header"></h2>
+                <h3 class="city-header"></h3>
                 <!-- right panel div top -->
             </div>
+            <h2 class="card-header">5-Day Forecast:</h2>
             <div>
-                <h2 class= "card-header">5-Day Forecast:</h2>
-                <!-- right panel div bottom -->
+                <div id="weather-today"></div>
+                <div id="weather-pic"></div>
+                <div id="temperature"></div>
+                <div id="sunset"></div>
+                <div id="forecast"></div>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </body>
 </html>
