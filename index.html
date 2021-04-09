@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Weather Dashboard</title>
@@ -18,64 +20,64 @@
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-4">
             <div class="form">
-              <div id="modal-form" class="" data-reveal aria-labelledby="userForm" aria-hidden="true" role="dialog">
-                <form class="form-style">
-                    <fieldset>
-                      <legend id="userForm">Search for a city:</legend>
-                    <p id="field1">
-                        <label for="cityName">
-                        Zipcode: <input type="text" id="cityName" class="form-input">
-                        </label>
-                    </p> 
-                      <p>
-                          <button id="form-submit" type="submit" class="button radius">Check the Weather</button>
-                      </p>
-                    </fieldset>
-                  </form>
-                  <h2>Recent Searches:</h2>
-                  <ul class="weather-list" id="renderSearches"></ul>
-              </div>
-        </div>
+                <div id="modal-form" class="" data-reveal aria-labelledby="userForm" aria-hidden="true" role="dialog">
+                    <form class="form-style">
+                        <fieldset>
+                            <legend id="userForm">Search for a city:</legend>
+                            <p id="field1">
+                                <label for="cityName">
+                                    Zipcode: <input type="text" id="cityName" class="form-input">
+                                </label>
+                            </p>
+                            <p>
+                                <button id="form-submit" type="submit" class="button radius">Check the Weather</button>
+                            </p>
+                        </fieldset>
+                    </form>
+                    <h2>Recent Searches:</h2>
+                    <ul class="weather-list" id="renderSearches"></ul>
+                </div>
+            </div>
         </div>
         <div class="col-12 col-md-8">
-            <h3 id = "add-name">The Current Weather in: </h3>
-            <div id = "current-forecast">
-                <div id ="day"></div>
-                <div id ="img"></div>
-                <div id ="temp"></div>
-                <div id ="hum"></div>
+            <h3 id="add-name">The Current Weather in: </h3>
+            <div id="current-forecast">
+                <div id="day"></div>
+                <div id="img"></div>
+                <div id="temp"></div>
+                <div id="hum"></div>
             </div>
             <div>
-                <h2 class="card-header" id = "add-name-2"></h2>
-                <div class = "forecast" id="day1">
-                    <div id ="day"></div>
-                    <div id ="img1"></div>
-                    <div id ="temp"></div>
-                    <div id ="hum"></div>
+                <h2 class="card-header" id="add-name-2"></h2>
+                <div class="forecast" id="day1">
+                    <div id="day"></div>
+                    <div id="img1"></div>
+                    <div id="temp"></div>
+                    <div id="hum"></div>
                 </div>
-                <div class = "forecast" id="day2">
-                    <div id ="day"></div>
-                    <div id ="img2"></div>
-                    <div id ="temp"></div>
-                    <div id ="hum"></div>
+                <div class="forecast" id="day2">
+                    <div id="day"></div>
+                    <div id="img2"></div>
+                    <div id="temp"></div>
+                    <div id="hum"></div>
                 </div>
-                <div class = "forecast" id="day3">
-                    <div id ="day"></div>
-                    <div id ="img3"></div>
-                    <div id ="temp"></div>
-                    <div id ="hum"></div>
+                <div class="forecast" id="day3">
+                    <div id="day"></div>
+                    <div id="img3"></div>
+                    <div id="temp"></div>
+                    <div id="hum"></div>
                 </div>
-                <div class = "forecast" id="day4">
-                    <div id ="day"></div>
-                    <div id ="img4"></div>
-                    <div id ="temp"></div>
-                    <div id ="hum"></div>
+                <div class="forecast" id="day4">
+                    <div id="day"></div>
+                    <div id="img4"></div>
+                    <div id="temp"></div>
+                    <div id="hum"></div>
                 </div>
-                <div class = "forecast" id="day5">
-                    <div id ="day"></div>
-                    <div id ="img5"></div>
-                    <div id ="temp"></div>
-                    <div id ="hum"></div>
+                <div class="forecast" id="day5">
+                    <div id="day"></div>
+                    <div id="img5"></div>
+                    <div id="temp"></div>
+                    <div id="hum"></div>
                 </div>
             </div>
         </div>
@@ -83,4 +85,5 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </body>
+
 </html>
