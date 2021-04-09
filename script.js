@@ -4,8 +4,8 @@ let submit = document.getElementById("form-submit");
 let input = document.getElementById("cityName");
 const userInput = JSON.parse(localStorage.getItem("userInput"));
 let ul = document.querySelector("ul")
-
-
+var currentDate = moment().format("dddd, MMMM Do");
+let city = "";
 let searchArr = [];
     
 formSubmitBtn.click( () => {
@@ -34,27 +34,34 @@ function saveUserForm(e) {
   const zipCode = JSON.parse(localStorage.getItem("userInput"))
 
 function renderCurrentWeather() {
-    let wRequest = "https://api.openweathermap.org/data/2.5/forecast?q=" + String(userInput.cityName) + ",US&units=imperial&appid=c571dcc28202f5c8d2b8377fd87551f0";
-    let wLocal = document.getElementById("current-forecast")
-    let img = document.getElementById("img")
+  let wRequest = "https://api.openweathermap.org/data/2.5/forecast?q=" + String(userInput.cityName) + ",US&units=imperial&appid=c571dcc28202f5c8d2b8377fd87551f0";
+  let wLocal = document.getElementById("current-forecast")
+  let addCity = document.getElementById("add-name")
+  let img = document.getElementById("img")
+  // let zipRequest = "https://app.zipcodebase.com/api/v1/search?apikey=32e750a0-9960-11eb-86ae-914b97647491&country=US&codes=" + userInput.cityName;
+  
+  // fetch(zipRequest)
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (data) {
+  //     console.log(data);
+  //     wLocal.innerText = `Current Weather in: ${userInput.cityName}`;
+  //   })
 
-    // wLocal.innerHTML = "The current weather in " + userInput.cityName;
-
-    fetch(wRequest)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        // wLocal.append(" is " + data.list[0].main.temp.toFixed() + " degrees F.");
-        wLocal.children[0].innerHTML = data.list[0].dt_txt;
-        img.src = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
-        wLocal.children[1].innerHTML = '<img src="' + img.src + '"/>'
-        wLocal.children[2].innerHTML = "Temperature: " + data.list[0].main.temp.toFixed()
-        wLocal.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity
-
-
-      })
-  }
+  fetch(wRequest)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      addCity.innerHTML = "The Current Weather in " + userInput.cityName;
+      wLocal.children[0].innerHTML = currentDate;
+      img.src = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
+      wLocal.children[1].innerHTML = '<img src="' + img.src + '"/>'
+      wLocal.children[2].innerHTML = "Temperature: " + data.list[0].main.temp.toFixed()
+      wLocal.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity
+    })
+}
 
   renderCurrentWeather();
 
@@ -70,9 +77,10 @@ function renderForecast() {
     let img3 = document.getElementById("img3")
     let img4 = document.getElementById("img4")
     let img5 = document.getElementById("img5")
-
+    let addCity = document.getElementById("add-name-2");
     // let wRequest = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=c571dcc28202f5c8d2b8377fd87551f0";
     let wRequest = "https://api.openweathermap.org/data/2.5/forecast?q=" + String(userInput.cityName) + ",US&units=imperial&appid=c571dcc28202f5c8d2b8377fd87551f0";
+    addCity.innerHTML = "Upcoming 5-Day Forecast for " + userInput.cityName;
 
     fetch(wRequest)
     .then(function (response) {
@@ -80,11 +88,11 @@ function renderForecast() {
     })
     .then(function (data) {
         console.log(data)
-        day1.children[0].innerHTML = data.list[0].dt_txt;
-        day2.children[0].innerHTML = data.list[8].dt_txt;
-        day3.children[0].innerHTML = data.list[16].dt_txt;
-        day4.children[0].innerHTML = data.list[24].dt_txt;
-        day5.children[0].innerHTML = data.list[32].dt_txt;
+        day1.children[0].innerHTML = moment().add(1, 'days').format("dddd, MMMM Do");
+        day2.children[0].innerHTML = moment().add(2, 'days').format("dddd, MMMM Do");
+        day3.children[0].innerHTML = moment().add(3, 'days').format("dddd, MMMM Do");
+        day4.children[0].innerHTML = moment().add(4, 'days').format("dddd, MMMM Do");
+        day5.children[0].innerHTML = moment().add(5, 'days').format("dddd, MMMM Do");
 
         img1.src = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
         day1.children[1].innerHTML = '<img src="' + img1.src + '"/>'
