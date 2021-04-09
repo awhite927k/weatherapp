@@ -24,45 +24,59 @@
                       <legend id="userForm">Search for a city:</legend>
                     <p id="field1">
                         <label for="cityName">
-                        City Name: <input type="text" id="cityName" class="form-input">
+                        Zipcode: <input type="text" id="cityName" class="form-input">
                         </label>
-                    </p>    
-                    <p>
-                        <label for="citySelect">
-                        Select a city: 
-                        </label>
-                        <select id="citySelect" class="form-input">
-                            <option value="Austin">Austin</option>
-                            <option value="Chicago">Chicago</option>
-                            <option value="New York">New York</option>
-                            <option value="Orlando">Orlando</option>
-                            <option value="San Francisco">San Francisco</option>
-                            <option value="Seattle">Seattle</option>
-                            <option value="Denver">Denver</option>
-                            <option value="Atlanta">Atlanta</option>
-                        </select>
-                      </p>
+                    </p> 
                       <p>
                           <button id="form-submit" type="submit" class="button radius">Check the Weather</button>
                       </p>
-        
                     </fieldset>
                   </form>
+                  <h2>Recent Searches:</h2>
+                  <ul class="weather-list" id="renderSearches"></ul>
               </div>
         </div>
         </div>
         <div class="col-12 col-md-8">
-            <div>
-                <h3 class="city-header"></h3>
-                <!-- right panel div top -->
+            <h3 class="city-header">Today's Forecast</h3>
+            <div id = "current-forecast">
+                <div id ="day"></div>
+                <div id ="img"></div>
+                <div id ="temp"></div>
+                <div id ="hum"></div>
             </div>
-            <h2 class="card-header">5-Day Forecast:</h2>
             <div>
-                <div id="weather-today"></div>
-                <div id="weather-pic"></div>
-                <div id="temperature"></div>
-                <div id="sunset"></div>
-                <div id="forecast"></div>
+                <h2 class="card-header">5-Day Forecast:</h2>
+                <div class = "forecast" id="day1">
+                    <div id ="day"></div>
+                    <div id ="img1"></div>
+                    <div id ="temp"></div>
+                    <div id ="hum"></div>
+                </div>
+                <div class = "forecast" id="day2">
+                    <div id ="day"></div>
+                    <div id ="img2"></div>
+                    <div id ="temp"></div>
+                    <div id ="hum"></div>
+                </div>
+                <div class = "forecast" id="day3">
+                    <div id ="day"></div>
+                    <div id ="img3"></div>
+                    <div id ="temp"></div>
+                    <div id ="hum"></div>
+                </div>
+                <div class = "forecast" id="day4">
+                    <div id ="day"></div>
+                    <div id ="img4"></div>
+                    <div id ="temp"></div>
+                    <div id ="hum"></div>
+                </div>
+                <div class = "forecast" id="day5">
+                    <div id ="day"></div>
+                    <div id ="img5"></div>
+                    <div id ="temp"></div>
+                    <div id ="hum"></div>
+                </div>
             </div>
         </div>
     </main>

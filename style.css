@@ -448,3 +448,7 @@ h2 {
     }
   }
   
+  .forecast {
+    border: 2px solid black;
+    display:inline-block;
+  }
