@@ -65,7 +65,7 @@ function renderCurrentWeather() {
         wLocal.children[4].innerHTML = "UV Index: " + data.current.uvi
         if (data.value <= 2) {
           uvColor.style = "background-color: green"
-        } else if (uvdata.value <= 5) {
+        } else if (data.value <= 5) {
           uvColor.style = "background-color: yellow"
         } else {
           uvColor.style = "background-color: red"

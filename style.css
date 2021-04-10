@@ -451,4 +451,12 @@ h2 {
   .forecast {
     border: 2px solid black;
     display:inline-block;
+    padding:20px;
+    width: auto;
+  }
+
+  #current-forecast {
+    width:50%;
+    border: 2px solid black;
+    padding: 20px;
   }
