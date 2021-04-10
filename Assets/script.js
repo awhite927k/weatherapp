@@ -77,7 +77,6 @@ function renderCurrentWeather() {
 
   renderCurrentWeather();
 
-// five day forecast 
 function renderForecast() {
     let day1 = document.getElementById("day1")
     let day2 = document.getElementById("day2")
