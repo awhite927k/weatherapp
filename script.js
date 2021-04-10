@@ -116,6 +116,12 @@ function renderForecast() {
         day3.children[3].innerHTML = "Humidity: " + data.list[16].main.humidity
         day4.children[3].innerHTML = "Humidity: " + data.list[24].main.humidity
         day5.children[3].innerHTML = "Humidity: " + data.list[32].main.humidity
+
+        day1.children[4].innerHTML = "Wind Speed: " + data.list[0].wind.speed
+        day2.children[4].innerHTML = "Wind Speed: " + data.list[8].wind.speed
+        day3.children[4].innerHTML = "Wind Speed: " + data.list[16].wind.speed
+        day4.children[4].innerHTML = "Wind Speed: " + data.list[24].wind.speed
+        day5.children[4].innerHTML = "Wind Speed: " + data.list[32].wind.speed
     })
 }
 
