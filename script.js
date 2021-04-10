@@ -38,16 +38,7 @@ function renderCurrentWeather() {
   let wLocal = document.getElementById("current-forecast")
   let addCity = document.getElementById("add-name")
   let img = document.getElementById("img")
-  // let zipRequest = "https://app.zipcodebase.com/api/v1/search?apikey=32e750a0-9960-11eb-86ae-914b97647491&country=US&codes=" + userInput.cityName;
-  
-  // fetch(zipRequest)
-  //   .then(function (response) {
-  //     return response.json();
-  //   })
-  //   .then(function (data) {
-  //     console.log(data);
-  //     wLocal.innerText = `Current Weather in: ${userInput.cityName}`;
-  //   })
+  let uvColor = document.getElementById("uv")
 
   fetch(wRequest)
     .then(function (response) {
@@ -59,7 +50,29 @@ function renderCurrentWeather() {
       img.src = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png"
       wLocal.children[1].innerHTML = '<img src="' + img.src + '"/>'
       wLocal.children[2].innerHTML = "Temperature: " + data.list[0].main.temp.toFixed()
-      wLocal.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity
+      wLocal.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity + "%"
+
+      let lat = data.city.coord.lat
+      let lon = data.city.coord.lon
+
+      let uvCall = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=c571dcc28202f5c8d2b8377fd87551f0"
+      fetch(uvCall)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+        wLocal.children[4].innerHTML = "UV Index: " + data.current.uvi
+        if (data.value <= 2) {
+          uvColor.style = "background-color: green"
+        } else if (uvdata.value <= 5) {
+          uvColor.style = "background-color: yellow"
+        } else {
+          uvColor.style = "background-color: red"
+      }
+      })
+
+
     })
 }
 
@@ -111,11 +124,11 @@ function renderForecast() {
         day4.children[2].innerHTML = "Temperature: " + data.list[24].main.temp.toFixed()
         day5.children[2].innerHTML = "Temperature: " + data.list[32].main.temp.toFixed()
 
-        day1.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity
-        day2.children[3].innerHTML = "Humidity: " + data.list[8].main.humidity
-        day3.children[3].innerHTML = "Humidity: " + data.list[16].main.humidity
-        day4.children[3].innerHTML = "Humidity: " + data.list[24].main.humidity
-        day5.children[3].innerHTML = "Humidity: " + data.list[32].main.humidity
+        day1.children[3].innerHTML = "Humidity: " + data.list[0].main.humidity + "%"
+        day2.children[3].innerHTML = "Humidity: " + data.list[8].main.humidity + "%"
+        day3.children[3].innerHTML = "Humidity: " + data.list[16].main.humidity + "%"
+        day4.children[3].innerHTML = "Humidity: " + data.list[24].main.humidity + "%"
+        day5.children[3].innerHTML = "Humidity: " + data.list[32].main.humidity + "%"
 
         day1.children[4].innerHTML = "Wind Speed: " + data.list[0].wind.speed
         day2.children[4].innerHTML = "Wind Speed: " + data.list[8].wind.speed
