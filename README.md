@@ -36,3 +36,6 @@ The following image shows the web application's appearance and functionality:
 
 ## Link to Live Site
 https://awhite927k.github.io/weatherapp/
+
+## Contact Information
+Alexandra White
