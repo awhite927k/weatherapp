@@ -12,8 +12,7 @@ formSubmitBtn.click( () => {
     saveUserForm();
   })
   
-function saveUserForm(e) {
-    // e.preventDefault();
+function saveUserForm() {
     if ($("#cityName").val() == "") {
         confirm("Error: Please make sure to enter a zipcode!");
     } 
@@ -91,7 +90,6 @@ function renderForecast() {
     let img4 = document.getElementById("img4")
     let img5 = document.getElementById("img5")
     let addCity = document.getElementById("add-name-2");
-    // let wRequest = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude={part}&appid=c571dcc28202f5c8d2b8377fd87551f0";
     let wRequest = "https://api.openweathermap.org/data/2.5/forecast?q=" + String(userInput.cityName) + ",US&units=imperial&appid=c571dcc28202f5c8d2b8377fd87551f0";
     addCity.innerHTML = "Upcoming 5-Day Forecast for " + userInput.cityName;
 
