@@ -39,3 +39,4 @@ https://awhite927k.github.io/weatherapp/
 
 ## Contact Information
 Alexandra White
+awhite214@gmail.com
